@@ -1,0 +1,44 @@
+---
+name: ml_project
+channels: [conda-forge, r, nodefaults]
+dependencies:
+  - python ==3.10
+  - pip >=21.1
+
+  # Development dependencies
+  - conda-lock
+  - ipykernel
+  - jupyterlab
+  - pre-commit
+
+  # Language agnostic template project dependencies
+  - pytask >=0.5.0
+  - pytask-latex >=0.4.2
+  - pytask-parallel >=0.5.0
+  - pytest
+  - pytest-cov
+  - pytest-xdist
+
+  # Python template project dependencies
+  - numpy==1.23.5
+  - econml==0.15.1
+  - pandas
+  - scikit-learn==1.5.2
+  - matplotlib
+  - statsmodels
+  - seaborn
+  - plotly
+  - pyarrow
+  - scipy
+  - pathlib
+
+  # R template project dependencies
+  #- pytask-r >=0.4.1
+  #- pyreadr
+  #- r-plyr
+  #- r-precommit
+  #- r-yaml
+  #- r-forcats
+
+  # Install project
+  #- pip: [-e ., pdbp, kaleido] #agregr esto si agrego a github
