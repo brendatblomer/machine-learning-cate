@@ -1,4 +1,4 @@
-Hey, Felix!
+Hey!
 
 Here are the istructions for running this project (at least until now) and is by running all commands in your terminal:
 
