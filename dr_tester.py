@@ -55,7 +55,7 @@ def cf_drtest(df, treatment, outcome, covariates_names, question,
     res_cf = cf_tester.evaluate_all(x_test_t, x_train_t, n_groups=division_for_cate)
 
     # ESTO HABRIA QUE VER COMO SE GUARDA
-    #res_cf.summary()
+    print(res_cf.summary())
 
     res_cf.plot_cal(1)
     plt.savefig(f'bld/cal_plot_question{question}.png', dpi=300, bbox_inches='tight')

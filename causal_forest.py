@@ -66,5 +66,37 @@ def graph_representative_tree(model, x_cov, covariates_names, question, tree_dep
     plt.savefig(f'bld/tree_question{question}.png', dpi=300, bbox_inches='tight')
     plt.close()
 
+# esta funcion esta fatal, la hice rapido para tener resultados, luego si eso corregir
+def printing_some_characteristics(df, model, x_cov, question):
+    cate = model.effect(x_cov)
+    cate_mean = np.mean(cate)
+    grupo_bajo = cate <= cate_mean
+    grupo_alto = cate > cate_mean
+    grupo_bajo_df = df[grupo_bajo]
+    grupo_alto_df = df[grupo_alto]
+
+    print(f'Question{question}')
+    print("Big 5")
+    print("Mean openness for group 1:", round(grupo_bajo_df["openness"].mean(), 2))
+    print("Mean openness for group 2:", round(grupo_alto_df["openness"].mean(), 2))
+    print("Mean conscientiousness for group 1:", round(grupo_bajo_df["conscientiousness"].mean(), 2))
+    print("Mean conscientiousness for group 2:", round(grupo_alto_df["conscientiousness"].mean(), 2))
+    print("Mean extraversion for group 1:", round(grupo_bajo_df["extraversion"].mean(), 2))
+    print("Mean extraversion for group 2:", round(grupo_alto_df["extraversion"].mean(), 2))
+    print("Mean agreeableness for group 1:", round(grupo_bajo_df["agreeableness"].mean(), 2))
+    print("Mean agreeableness for group 2:", round(grupo_alto_df["agreeableness"].mean(), 2))
+    print("Mean neuroticism for group 1:", round(grupo_bajo_df["neuroticism"].mean(), 2))
+    print("Mean neuroticism for group 2:", round(grupo_alto_df["neuroticism"].mean(), 2))
+    print("Not Big 5")
+    print("Mean trust_in_science for group 1:", round(grupo_bajo_df["trust_in_science"].mean(), 2))
+    print("Mean trust_in_science for group 2:", round(grupo_alto_df["trust_in_science"].mean(), 2))
+    print("Mean policy_preferences for group 1:", round(grupo_bajo_df["policy_preferences"].mean(), 2))
+    print("Mean policy_preferences for group 2:", round(grupo_alto_df["policy_preferences"].mean(), 2))
+    print("Mean age for group 1:", round(grupo_bajo_df["age"].mean(), 2))
+    print("Mean age for group 2:", round(grupo_alto_df["age"].mean(), 2))
+    print("Mean female for group 1:", round(grupo_bajo_df["female_created"].mean(), 2))
+    print("Mean female for group 2:", round(grupo_alto_df["female_created"].mean(), 2))
+    print("Mean education for group 1:", round(grupo_bajo_df["education"].mean(), 2))
+    print("Mean education for group 2:", round(grupo_alto_df["education"].mean(), 2))
 
     
